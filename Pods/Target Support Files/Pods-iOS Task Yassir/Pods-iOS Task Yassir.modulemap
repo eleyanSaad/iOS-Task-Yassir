@@ -1,0 +1,6 @@
+framework module Pods_iOS_Task_Yassir {
+  umbrella header "Pods-iOS Task Yassir-umbrella.h"
+
+  export *
+  module * { export * }
+}
