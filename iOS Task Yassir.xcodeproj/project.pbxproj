@@ -27,7 +27,18 @@
 		8701D1082C42917B00B949BC /* CharactersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8701D1072C42917B00B949BC /* CharactersCell.xib */; };
 		8701D10A2C42B87A00B949BC /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701D1092C42B87A00B949BC /* Extentions.swift */; };
 		8701D10C2C439A8D00B949BC /* CharacterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701D10B2C439A8D00B949BC /* CharacterDetails.swift */; };
+		8778C6882C46D5F7000BEDB0 /* CharactersListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778C6872C46D5F7000BEDB0 /* CharactersListVCTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8778C6892C46D5F7000BEDB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8701D0CA2C426E9700B949BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8701D0D12C426E9700B949BC;
+			remoteInfo = "iOS Task Yassir";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		35F4AE059389428B19D781A8 /* Pods-iOS Task Yassir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Task Yassir.release.xcconfig"; path = "Target Support Files/Pods-iOS Task Yassir/Pods-iOS Task Yassir.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +65,8 @@
 		8701D1072C42917B00B949BC /* CharactersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCell.xib; sourceTree = "<group>"; };
 		8701D1092C42B87A00B949BC /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		8701D10B2C439A8D00B949BC /* CharacterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetails.swift; sourceTree = "<group>"; };
+		8778C6852C46D5F7000BEDB0 /* iOS Task YassirTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Task YassirTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8778C6872C46D5F7000BEDB0 /* CharactersListVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListVCTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +75,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				06C11977A08F5F83BEAFE12E /* Pods_iOS_Task_Yassir.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8778C6822C46D5F7000BEDB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				8701D0D42C426E9700B949BC /* iOS Task Yassir */,
+				8778C6862C46D5F7000BEDB0 /* iOS Task YassirTests */,
 				8701D0D32C426E9700B949BC /* Products */,
 				E0A48C60BFA3A7A9735D4060 /* Pods */,
 				7A06F68326289C06C2289A5A /* Frameworks */,
@@ -90,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				8701D0D22C426E9700B949BC /* iOS Task Yassir.app */,
+				8778C6852C46D5F7000BEDB0 /* iOS Task YassirTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +207,14 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		8778C6862C46D5F7000BEDB0 /* iOS Task YassirTests */ = {
+			isa = PBXGroup;
+			children = (
+				8778C6872C46D5F7000BEDB0 /* CharactersListVCTests.swift */,
+			);
+			path = "iOS Task YassirTests";
+			sourceTree = "<group>";
+		};
 		E0A48C60BFA3A7A9735D4060 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +246,24 @@
 			productReference = 8701D0D22C426E9700B949BC /* iOS Task Yassir.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8778C6842C46D5F7000BEDB0 /* iOS Task YassirTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8778C68B2C46D5F7000BEDB0 /* Build configuration list for PBXNativeTarget "iOS Task YassirTests" */;
+			buildPhases = (
+				8778C6812C46D5F7000BEDB0 /* Sources */,
+				8778C6822C46D5F7000BEDB0 /* Frameworks */,
+				8778C6832C46D5F7000BEDB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8778C68A2C46D5F7000BEDB0 /* PBXTargetDependency */,
+			);
+			name = "iOS Task YassirTests";
+			productName = "iOS Task YassirTests";
+			productReference = 8778C6852C46D5F7000BEDB0 /* iOS Task YassirTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -228,6 +276,10 @@
 				TargetAttributes = {
 					8701D0D12C426E9700B949BC = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					8778C6842C46D5F7000BEDB0 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 8701D0D12C426E9700B949BC;
 					};
 				};
 			};
@@ -245,6 +297,7 @@
 			projectRoot = "";
 			targets = (
 				8701D0D12C426E9700B949BC /* iOS Task Yassir */,
+				8778C6842C46D5F7000BEDB0 /* iOS Task YassirTests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +312,13 @@
 				8701D0DF2C426E9800B949BC /* Assets.xcassets in Resources */,
 				8701D0DD2C426E9700B949BC /* Main.storyboard in Resources */,
 				8701D1082C42917B00B949BC /* CharactersCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8778C6832C46D5F7000BEDB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +388,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8778C6812C46D5F7000BEDB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8778C6882C46D5F7000BEDB0 /* CharactersListVCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8778C68A2C46D5F7000BEDB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8701D0D12C426E9700B949BC /* iOS Task Yassir */;
+			targetProxy = 8778C6892C46D5F7000BEDB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8701D0DB2C426E9700B949BC /* Main.storyboard */ = {
@@ -529,6 +605,42 @@
 			};
 			name = Release;
 		};
+		8778C68C2C46D5F7000BEDB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eventful.ai.iOS-Task-YassirTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Task Yassir.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOS Task Yassir";
+			};
+			name = Debug;
+		};
+		8778C68D2C46D5F7000BEDB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eventful.ai.iOS-Task-YassirTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Task Yassir.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOS Task Yassir";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -546,6 +658,15 @@
 			buildConfigurations = (
 				8701D0E72C426E9800B949BC /* Debug */,
 				8701D0E82C426E9800B949BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8778C68B2C46D5F7000BEDB0 /* Build configuration list for PBXNativeTarget "iOS Task YassirTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8778C68C2C46D5F7000BEDB0 /* Debug */,
+				8778C68D2C46D5F7000BEDB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

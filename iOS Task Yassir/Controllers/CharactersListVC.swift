@@ -15,15 +15,15 @@ class CharactersListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables
-    private var charactersListData: Characters?
-    private var filteredCharacters: [Result] = []
-    private let statusFilterList = ["Alive", "Dead", "unknown"]
-    private var currentPage = 1
-    private let charactersPerPage = 20
-    private var numberOfAllPages = 1
-    private var isLoadingMore = false
-    private var selectedStatus: String?
-    private var selectedStatusIndex: Int?
+     var charactersListData: Characters?
+     var filteredCharacters: [Result] = []
+     let statusFilterList = ["Alive", "Dead", "unknown"]
+     var currentPage = 1
+     let charactersPerPage = 20
+     var numberOfAllPages = 1
+     var isLoadingMore = false
+     var selectedStatus: String?
+     var selectedStatusIndex: Int?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ class CharactersListVC: UIViewController {
         }
     }
     
-    private func applyFilter() {
+     func applyFilter() {
         if let selectedStatus = selectedStatus {
             filteredCharacters = charactersListData?.results?.filter { $0.status == selectedStatus } ?? []
         } else {
