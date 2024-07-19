@@ -8,7 +8,6 @@ target 'iOS Task Yassir' do
   # Pods for iOS Task Yassir
   pod 'Alamofire', '4.9.0'
   pod 'SwiftyJSON'
-  pod 'lottie-ios', '3.3.0'
   pod 'SDWebImage', '~> 5.0'
   pod 'SDWebImageSwiftUI'
   pod 'SVProgressHUD', '~> 2.0'
