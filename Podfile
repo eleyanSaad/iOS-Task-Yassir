@@ -11,6 +11,7 @@ target 'iOS Task Yassir' do
   pod 'lottie-ios', '3.3.0'
   pod 'SDWebImage', '~> 5.0'
   pod 'SDWebImageSwiftUI'
+  pod 'SVProgressHUD', '~> 2.0'
 
 end
 

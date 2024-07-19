@@ -28,6 +28,7 @@
 		8701D10A2C42B87A00B949BC /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701D1092C42B87A00B949BC /* Extentions.swift */; };
 		8701D10C2C439A8D00B949BC /* CharacterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701D10B2C439A8D00B949BC /* CharacterDetails.swift */; };
 		8778C6882C46D5F7000BEDB0 /* CharactersListVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778C6872C46D5F7000BEDB0 /* CharactersListVCTests.swift */; };
+		8778C6932C4A6B23000BEDB0 /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778C6922C4A6B23000BEDB0 /* ActivityIndicatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		8701D10B2C439A8D00B949BC /* CharacterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetails.swift; sourceTree = "<group>"; };
 		8778C6852C46D5F7000BEDB0 /* iOS Task YassirTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Task YassirTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8778C6872C46D5F7000BEDB0 /* CharactersListVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListVCTests.swift; sourceTree = "<group>"; };
+		8778C6922C4A6B23000BEDB0 /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +122,13 @@
 			isa = PBXGroup;
 			children = (
 				8701D0E92C4274B900B949BC /* Models */,
-				8701D0EB2C42751E00B949BC /* Services */,
-				8701D0EC2C42753100B949BC /* Helpers */,
+				8778C6902C4A65D6000BEDB0 /* Views */,
 				8701D0EA2C42750C00B949BC /* Controllers */,
+				8701D0EE2C4277A200B949BC /* Networking */,
+				8701D0EC2C42753100B949BC /* Utilities */,
 				8701D0ED2C42754000B949BC /* Resources */,
 				8701D0D52C426E9700B949BC /* AppDelegate.swift */,
 				8701D0D72C426E9700B949BC /* SceneDelegate.swift */,
-				8701D0D92C426E9700B949BC /* ViewController.swift */,
 				8701D0E32C426E9800B949BC /* Info.plist */,
 			);
 			path = "iOS Task Yassir";
@@ -145,48 +147,39 @@
 		8701D0EA2C42750C00B949BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8701D0D92C426E9700B949BC /* ViewController.swift */,
 				8701D0FB2C42885C00B949BC /* CharactersListVC.swift */,
 				8701D10B2C439A8D00B949BC /* CharacterDetails.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		8701D0EB2C42751E00B949BC /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				8701D0EE2C4277A200B949BC /* Network */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		8701D0EC2C42753100B949BC /* Helpers */ = {
+		8701D0EC2C42753100B949BC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				8701D1092C42B87A00B949BC /* Extentions.swift */,
+				8778C6922C4A6B23000BEDB0 /* ActivityIndicatorManager.swift */,
 			);
-			path = Helpers;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		8701D0ED2C42754000B949BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8701D1022C428EE500B949BC /* CollectionViewCell */,
-				8701D0FD2C4288D500B949BC /* TableViewCells */,
 				8701D0DE2C426E9800B949BC /* Assets.xcassets */,
-				8701D0DB2C426E9700B949BC /* Main.storyboard */,
-				8701D0E02C426E9800B949BC /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		8701D0EE2C4277A200B949BC /* Network */ = {
+		8701D0EE2C4277A200B949BC /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				8701D0EF2C4277A200B949BC /* BasicAPI.swift */,
 				8701D0F02C4277A200B949BC /* API.swift */,
 				8701D0F12C4277A200B949BC /* Completion.swift */,
 			);
-			path = Network;
+			name = Networking;
+			path = Networking/Networking;
 			sourceTree = "<group>";
 		};
 		8701D0FD2C4288D500B949BC /* TableViewCells */ = {
@@ -213,6 +206,25 @@
 				8778C6872C46D5F7000BEDB0 /* CharactersListVCTests.swift */,
 			);
 			path = "iOS Task YassirTests";
+			sourceTree = "<group>";
+		};
+		8778C6902C4A65D6000BEDB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8778C6912C4A65EB000BEDB0 /* Storyboards */,
+				8701D0FD2C4288D500B949BC /* TableViewCells */,
+				8701D1022C428EE500B949BC /* CollectionViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8778C6912C4A65EB000BEDB0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8701D0DB2C426E9700B949BC /* Main.storyboard */,
+				8701D0E02C426E9800B949BC /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E0A48C60BFA3A7A9735D4060 /* Pods */ = {
@@ -380,6 +392,7 @@
 				8701D0D62C426E9700B949BC /* AppDelegate.swift in Sources */,
 				8701D0FA2C427C6800B949BC /* Origin.swift in Sources */,
 				8701D10C2C439A8D00B949BC /* CharacterDetails.swift in Sources */,
+				8778C6932C4A6B23000BEDB0 /* ActivityIndicatorManager.swift in Sources */,
 				8701D0F42C4277A200B949BC /* Completion.swift in Sources */,
 				8701D0D82C426E9700B949BC /* SceneDelegate.swift in Sources */,
 				8701D10A2C42B87A00B949BC /* Extentions.swift in Sources */,
@@ -553,6 +566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LTDGMAAT36;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS Task Yassir/Info.plist";
@@ -583,6 +597,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LTDGMAAT36;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS Task Yassir/Info.plist";

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Characters: Codable {
+struct Characters: Codable {
     var info: Info?
      var results: [Result]?
 }

@@ -2,7 +2,7 @@ import XCTest
 @testable import iOS_Task_Yassir // Replace `YourProject` with the actual name of your project/module
 
 class CharactersListVCTests: XCTestCase {
-
+    
     var charactersListVC: CharactersListVC!
     var navigationController: UINavigationController!
     override func setUp() {
@@ -32,20 +32,20 @@ class CharactersListVCTests: XCTestCase {
             XCTFail("NavigationController not found in storyboard with identifier 'CharactersNavigationController'")
         }
     }
-
-
+    
+    
     override func tearDown() {
         charactersListVC = nil
         navigationController = nil
         super.tearDown()
     }
-
+    
     func testViewDidLoad_SetsUpUI() {
         charactersListVC.viewDidLoad()
         XCTAssertEqual(charactersListVC.navigationController?.navigationBar.prefersLargeTitles, true)
         XCTAssertEqual(charactersListVC.title, "Characters")
     }
-
+    
     func testLoadCharacters_CallsAPIAndUpdatesData() {
         let expectation = XCTestExpectation(description: "Load characters data")
         charactersListVC.currentPage = 1
@@ -63,10 +63,10 @@ class CharactersListVCTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-
+        
         wait(for: [expectation], timeout: 5.0)
     }
-
+    
     func testApplyFilter_FiltersCharactersByStatus() {
         // Create a mock character with status "Alive"
         let mockCharacter = Result(id: 1, name: "Character 1", status: "Alive", species: nil, type: nil, gender: nil, origin: nil, location: nil, image: nil, episode: nil, url: nil, created: nil)
@@ -77,7 +77,7 @@ class CharactersListVCTests: XCTestCase {
         
         // Set the charactersListData property of the view controller to the mock characters
         charactersListVC.charactersListData = mockCharacters
-
+        
         // Set the selected status to "Alive"
         charactersListVC.selectedStatus = "Alive"
         
@@ -88,5 +88,5 @@ class CharactersListVCTests: XCTestCase {
         XCTAssertEqual(charactersListVC.filteredCharacters.count, 1)
         XCTAssertEqual(charactersListVC.filteredCharacters[0].status, "Alive")
     }
-
+    
 }

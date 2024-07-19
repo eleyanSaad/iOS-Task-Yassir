@@ -1,10 +1,3 @@
-//
-//  CharactersListVC.swift
-//  iOS Task Yassir
-//
-//  Created by eleyan saad on 13/07/2024.
-//
-
 import UIKit
 import SwiftUI
 
@@ -15,39 +8,69 @@ class CharactersListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Variables
-     var charactersListData: Characters?
-     var filteredCharacters: [Result] = []
-     let statusFilterList = ["Alive", "Dead", "unknown"]
-     var currentPage = 1
-     let charactersPerPage = 20
-     var numberOfAllPages = 1
-     var isLoadingMore = false
-     var selectedStatus: String?
-     var selectedStatusIndex: Int?
-
+    var charactersListData: Characters?
+    var filteredCharacters: [Result] = []
+    let statusFilterList = ["Alive", "Dead", "unknown"]
+    var currentPage = 1
+    let charactersPerPage = 20
+    var numberOfAllPages = 1
+    var isLoadingMore = false
+    var selectedStatus: String?
+    var selectedStatusIndex: Int?
+    let refreshControl = UIRefreshControl()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupRefreshControl()
         registerCells()
         loadCharacters(page: currentPage)
-        
     }
     
     // MARK: - UI Setup
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Characters"
-        
     }
+    
+    private func setupRefreshControl() {
+        // Add refresh control to table view
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        // Configure refresh control
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        // Reset the page number to 1 for the new request
+        currentPage = 1
+        
+        filteredCharacters.removeAll()
+        charactersListData?.results?.removeAll()
+        loadCharacters(page: currentPage)
+    }
+
     
     // MARK: - Data Loading
     private func loadCharacters(page: Int) {
         guard !isLoadingMore else { return } // Prevent multiple simultaneous requests
-        isLoadingMore = true // Start loading indicator
+        
+        ActivityIndicatorManager.start()
+        isLoadingMore = true
+        
         API.getCharactersApiList(pageNumber: page) { characterData, message, error in
             DispatchQueue.main.async {
+                ActivityIndicatorManager.stop()
+                self.refreshControl.endRefreshing()
+                
                 self.isLoadingMore = false // Stop loading indicator after request finishes
+                
                 if let error = error {
                     print("Error fetching characters: \(error.localizedDescription)")
                     self.errorAlert(title: "Alert", body: message)
@@ -79,7 +102,6 @@ class CharactersListVC: UIViewController {
         tableView.reloadData()
     }
     
-    
     // MARK: - Cell Registration
     private func registerCells() {
         tableView.register(UINib(nibName: "CharactersCell", bundle: nil), forCellReuseIdentifier: CharacterCell.cellID)
@@ -87,10 +109,8 @@ class CharactersListVC: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.rowHeight = 170
     }
 }
@@ -121,16 +141,14 @@ extension CharactersListVC: UITableViewDataSource, UITableViewDelegate {
             loadCharacters(page: currentPage)
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           let obj = filteredCharacters[indexPath.row]
-           
-           // Navigate to SwiftUI view passing `obj`
-           let swiftUIView = CharacterDetails(myObject: obj)
-           let hostingController = UIHostingController(rootView: swiftUIView)
-           
+        let obj = filteredCharacters[indexPath.row]
+        let swiftUIView = CharacterDetails(myObject: obj)
+        let hostingController = UIHostingController(rootView: swiftUIView)
         self.navigationItem.backButtonTitle = ""
-           navigationController?.pushViewController(hostingController, animated: true)
-       }
+        navigationController?.pushViewController(hostingController, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
@@ -190,6 +208,3 @@ extension CharactersListVC: UICollectionViewDataSource, UICollectionViewDelegate
         return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 0)
     }
 }
-
-
-
